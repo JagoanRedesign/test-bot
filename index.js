@@ -14,4 +14,4 @@ app.use(`/${ token }`, webhookCallback(bot, "express"))
 
 bot.command("start", ctx => ctx.reply("hello world yaa"))
 
-app.listen(port)
+app.listen(port, () => console.log("deployed!!"))
