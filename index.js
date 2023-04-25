@@ -17,14 +17,17 @@ bot.command("start", ctx => ctx.reply("hello world yaa"))
 bot.command("video", ctx => {
   let url = ctx.message.text.replace("/video").trim()
   let endpoint = `https://dlpanda.com?url=${ url }&token=G7eRpMaa`
-  axios.get(endpoint)
+  let headers = { headers: { "User-Agent": "Postify/1.0.0" } }
+  axios.get(endpoint, headers)
     .then(response => {
       let text = `${ response.status } ${ response.statusText }`
-      return ctx.reply(text)
+      ctx.reply(text)
+      return true
     })
     .catch(err => {
       let text = `${ err.response.status } ${ err.response.statusText }`
-      return ctx.reply(text)
+      ctx.reply(text)
+      return true
     })
 })
 
