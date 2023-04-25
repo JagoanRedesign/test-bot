@@ -17,7 +17,7 @@ bot.command("start", ctx => ctx.reply("hello world yaa"))
 bot.command("video", async ctx => {
   let url = ctx.message.text.replace("/video").trim()
   let endpoint = `https://dlpanda.com?url=${ url }&token=G7eRpMaa`
-  let headers = { headers: { "User-Agent": "Postify/1.0.0" } }
+  let headers = { headers: { "User-Agent": "Mozilla/5.0 (Linux; Android 10; SM-G996U Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36" } }
   try {
     let response = await axios.get(endpoint, headers)
     return ctx.reply(`${ response.status } ${ response.statusText }`)
