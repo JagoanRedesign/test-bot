@@ -21,12 +21,12 @@ bot.command("video", ctx => {
     .then(response => {
       let text = `${ response.status } ${ response.statusText }`
       ctx.reply(text)
-      console.log(text)
+      return console.log(text)
     })
     .catch(err => {
       let text = `${ err.response.status } ${ err.response.statusText }`
       ctx.reply(text)
-      console.error(err.response)
+      return console.error(err.response)
     })
 })
 
