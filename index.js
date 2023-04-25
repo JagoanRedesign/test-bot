@@ -20,13 +20,13 @@ bot.command("video", ctx => {
   axios.get(endpoint)
     .then(response => {
       let text = `${ response.status } ${ response.statusText }`
-      ctx.reply(text)
-      return console.log(text)
+      console.log(text)
+      return ctx.reply(text)
     })
     .catch(err => {
       let text = `${ err.response.status } ${ err.response.statusText }`
-      ctx.reply(text)
-      return console.error(err.response)
+      console.error(err.response)
+      return tx.reply(text)
     })
 })
 
